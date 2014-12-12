@@ -13,6 +13,8 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class DataHardware {
 
@@ -20,7 +22,11 @@ public class DataHardware {
 
         InetAddress ip;
         try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmSS");
+            String timeStamp = sdf.format(Calendar.getInstance().getTime());
+            System.out.println(timeStamp);
             ip = InetAddress.getLocalHost();
+
             System.out.println("Current host name : " + ip.getHostName());
             System.out.println("Current IP address : " + ip.getHostAddress());
 
