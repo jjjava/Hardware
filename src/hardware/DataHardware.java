@@ -1,4 +1,3 @@
-
 package hardware;
 
 /**
@@ -24,6 +23,8 @@ public class DataHardware {
             ip = InetAddress.getLocalHost();
             System.out.println("Current host name : " + ip.getHostName());
             System.out.println("Current IP address : " + ip.getHostAddress());
+
+            System.out.println("Full address : " + ip.getCanonicalHostName());
             String nameOS = System.getProperty("os.name");
             System.out.println("Operating system Name=>" + nameOS);
             String osType = System.getProperty("os.arch");
@@ -64,9 +65,9 @@ public class DataHardware {
             GraphicsDevice gd = ge.getDefaultScreenDevice();
 
             long accelMemory = gd.getAvailableAcceleratedMemory();  // in bytes
-            
-             System.out.println("Initial Acc. Mem.: "+accelMemory);
-            
+
+            System.out.println("Initial Acc. Mem.: " + accelMemory);
+
             System.out.println("Initial Acc. Mem.: "
                     + df.format(((double) accelMemory) / (1024 * 1024)) + " MB");
 
